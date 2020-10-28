@@ -20,13 +20,19 @@ helm install <NAME> <CHART FOLDER>/ --values <CHART FOLDER>/values.yaml
 
 ## Helm Install - OpenLDAP
 
+```
 helm install openldap openldap/ --values openldap/values.yaml
+```
 
+**Note:** Restart the pod if it crashloopback
 
 ## Helm Install - LDAPConsole
 
+```
 helm install ldapconsole ldapconsole/  --set LDAP.host=<Host IPAddress> --values ldapconsole/values.yaml
+```
 
+**Note:** Restart the pod if it crashloopback
 # Helm Dependency Update
 
 You can run the helm dependency update within any chart folder
