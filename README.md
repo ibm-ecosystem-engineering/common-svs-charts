@@ -31,6 +31,8 @@ helm install openldap openldap/ --values openldap/values.yaml
 
 ### Helm Install - LDAPConsole
 
+**Note:** rename folder "console" to "ldapconsole" as some reason github repo is not showing contents if i keep "ldapconsole"
+
 ```
 helm install ldapconsole ldapconsole/  --set LDAP.host=<Host IPAddress> --values ldapconsole/values.yaml
 ```
