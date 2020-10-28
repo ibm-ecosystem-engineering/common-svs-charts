@@ -1,0 +1,6 @@
+dependencies:
+- name: service-account
+  repository: https://ibm-garage-cloud.github.io/toolkit-charts/
+  version: 0.6.0
+digest: sha256:9ae73fa540bc73a8fc338a61c3d0fcd18400b1fe403e889c28f8d995c893ba11
+generated: "2020-10-28T12:33:32.489061-05:00"
