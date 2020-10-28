@@ -6,7 +6,7 @@ This GitHub repository also serves as a Helm repository, hosting the helm charts
 
 # Helm
 
-Helm is a package manager. Package managers automate the process of installing, configuring, upgrading, and removing computer programs. Examples include the Red Hat® Package Manager (RPM), Homebrew, and Windows PackageManagement.
+Helm is a package manager. Package managers automate the process of installing, configuring, upgrading, and removing computer programs. Examples include the Red Hat Package Manager (RPM), Homebrew, and Windows PackageManagement.
 
 An application in OpenShift typically consists of at least two resource types: a deployment resource, which describes a set of pods to be deployed together, and a services resource, which defines endpoints for accessing the APIs in those pods. The application can also include ConfigMaps, Secrets, and Ingress.
 
@@ -14,6 +14,12 @@ An application in OpenShift typically consists of at least two resource types: a
 
 
 # Helm Install 
+
+## Helm Install on Local
+
+[Installing Helm] (https://helm.sh/docs/intro/install/#helm)
+
+## Helm Install - Charts
 
 You can install Helm Charts
 
