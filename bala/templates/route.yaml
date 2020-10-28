@@ -1,0 +1,23 @@
+
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Values.host }}
+  labels:
+    app: {{ template "ldapconsole.name" . }}
+    chart: {{ template "ldapconsole.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    "app.kubernetes.io/name": {{ include "ldapconsole.fullname" . }}
+    "helm.sh/chart": {{ include "ldapconsole.chart" . }}
+    "app.kubernetes.io/instance": {{ .Release.Name }}
+    "app.kubernetes.io/component": {{ include "ldapconsole.fullname" . }}-deployment
+spec:
+  to:
+    kind: Service
+    name: {{ include "ldapconsole.fullname" . }}
+    weight: 100
+  port:
+    targetPort: {{  .Values.service.port }}
+  wildcardPolicy: None
+
