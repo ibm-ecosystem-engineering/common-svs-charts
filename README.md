@@ -10,7 +10,7 @@ Helm is a package manager. Package managers automate the process of installing, 
 
 An application in OpenShift typically consists of at least two resource types: a deployment resource, which describes a set of pods to be deployed together, and a services resource, which defines endpoints for accessing the APIs in those pods. The application can also include ConfigMaps, Secrets, and Ingress.
 
-![Helm Components ](Helm.png)
+![Helm Components](HelmComponents.png)
 
 
 # Helm Install 
