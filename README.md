@@ -39,7 +39,12 @@ helm install openldap openldap/ --values openldap/values.yaml
 
 **Note:** Restart the pod if it crashloopback
 
-### Helm Install - LDAPConsole
+### Helm Install - LDAPConsole (phpLDAPadmin)
+
+phpLDAPadmin (also known as PLA) is a web-based LDAP client. It provides easy, anywhere-accessible, multi-language administration for your LDAP server.
+
+Its hierarchical tree-viewer and advanced search functionality make it intuitive to browse and administer your LDAP directory. Since it is a web application, this LDAP browser works on many platforms, making your LDAP server easily manageable from any location.
+
 
 **Note:** rename folder "console" to "ldapconsole" as some reason github repo is not showing contents if i keep "ldapconsole"
 
