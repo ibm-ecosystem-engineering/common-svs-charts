@@ -33,6 +33,8 @@ LDAP was originally a protocol, Lightweight Directory Access Protocol, and is no
 
 OpenLDAP is an open-source implementation of LDAP, both server and client.
 
+Here is the script to install the OpenLDAP Server via Helm Chart
+
 ```
 helm install openldap openldap/ --values openldap/values.yaml
 ```
@@ -45,8 +47,9 @@ phpLDAPadmin (also known as PLA) is a web-based LDAP client. It provides easy, a
 
 Its hierarchical tree-viewer and advanced search functionality make it intuitive to browse and administer your LDAP directory. Since it is a web application, this LDAP browser works on many platforms, making your LDAP server easily manageable from any location.
 
-
 **Note:** rename folder "console" to "ldapconsole" as some reason github repo is not showing contents if i keep "ldapconsole"
+
+Here is the script to install the LDAPConsole (phpLDAPadmin) via Helm Chart
 
 ```
 helm install ldapconsole ldapconsole/  --set LDAP.host=<Host IPAddress> --values ldapconsole/values.yaml
