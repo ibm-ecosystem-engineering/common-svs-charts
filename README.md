@@ -1,4 +1,4 @@
-# FSS Cloud Helm charts
+# Common Services Cloud Helm charts
 
 A collection of helm charts used by and/or provided for the FSS Cloud - Falcon Banc development
 
@@ -28,6 +28,10 @@ helm install <NAME> <CHART FOLDER>/ --values <CHART FOLDER>/values.yaml
 ```
 
 ### Helm Install - OpenLDAP
+
+LDAP was originally a protocol, Lightweight Directory Access Protocol, and is now a directory service specification in its own right, including all kinds of schemas and extras.
+
+OpenLDAP is an open-source implementation of LDAP, both server and client.
 
 ```
 helm install openldap openldap/ --values openldap/values.yaml
