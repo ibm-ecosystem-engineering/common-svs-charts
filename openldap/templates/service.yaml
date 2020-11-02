@@ -17,3 +17,4 @@ spec:
       targetPort: {{ .Values.service.sslLdapPort }}
   selector:
     {{- include "openldap.selectorLabels" . | nindent 4 }}
+    

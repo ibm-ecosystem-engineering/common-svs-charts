@@ -37,11 +37,15 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   name: ldap-port
   protocol : TCP
   ldapPort: 389
   sslLdapPort: 636
+
+ldap:
+  org: falconbanc
+  domain : falconbanc.com
 
 ingress:
   enabled: false
