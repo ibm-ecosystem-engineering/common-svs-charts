@@ -45,7 +45,8 @@ service:
   sslPort: 443
 
 LDAP:
-  host: ldap://openldap.default.svc.cluster.local:389
+  hostinternal: ldap://openldap.default.svc.cluster.local:389
+  hostexternal: ldapui.falconbanc.com
 
 ingress:
   enabled: false

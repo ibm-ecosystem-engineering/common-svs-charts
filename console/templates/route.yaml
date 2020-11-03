@@ -13,6 +13,7 @@ metadata:
     "app.kubernetes.io/instance": {{ .Release.Name }}
     "app.kubernetes.io/component": {{ include "ldapconsole.fullname" . }}-deployment
 spec:
+  host: {{ .Values.LDAP.hostexternal }}
   to:
     kind: Service
     name: {{ include "ldapconsole.fullname" . }}
