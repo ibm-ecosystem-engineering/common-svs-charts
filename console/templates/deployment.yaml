@@ -27,17 +27,47 @@ spec:
       serviceAccountName: {{ include "ldapconsole.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: falconbanc-cert-volume
+          configMap:
+            name: falconbanc-cert
+        - name: falconbanc-keys-volume
+          configMap:
+            name: falconbanc-keys
+        - name: falconbanc-root-volume
+          configMap:
+            name: falconbanc-root-cert
       containers:
         - name: {{ .Chart.Name }}
           env:
           - name: PHPLDAPADMIN_LDAP_HOSTS
             value: {{ .Values.LDAP.hostinternal }}
           - name: PHPLDAPADMIN_HTTPS
-            value: 'false'
+            value: 'true'
+          - name: PHPLDAPADMIN_HTTPS_CRT_FILENAME
+            value: {{ .Values.cert.crt }}
+          - name: PHPLDAPADMIN_HTTPS_KEY_FILENAME
+            value: {{ .Values.cert.key }}
+          - name: PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME
+            value: {{ .Values.cert.cacrt }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: 
+            - -l
+            - {{ .Values.logLevel }}
+            - --copy-service
+          volumeMounts:
+            - name: falconbanc-cert-volume
+              mountPath: /container/service/phpldapadmin/assets/apache2/certs/falcon_banc.pem
+              subPath: falcon_banc.pem
+            - name: falconbanc-keys-volume
+              mountPath: /container/service/phpldapadmin/assets/apache2/certs/falcon_banc.key
+              subPath: falcon_banc.key
+            - name: falconbanc-root-volume
+              mountPath: /container/service/phpldapadmin/assets/apache2/certs/letsencryptauthorityx3-root.pem
+              subPath: letsencryptauthorityx3-root.pem
           ports:
             - name: ldap-port
               containerPort: {{ .Values.service.port }}
@@ -69,3 +99,5 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+
+

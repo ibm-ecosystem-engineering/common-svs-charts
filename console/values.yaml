@@ -92,3 +92,8 @@ service-account:
   name: ldapconsole
   sccs:
     - anyuid
+
+cert:
+  cacrt: letsencryptauthorityx3-root.pem
+  key: falcon_banc.key
+  crt: falcon_banc.pem

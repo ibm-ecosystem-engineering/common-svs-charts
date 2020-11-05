@@ -19,6 +19,8 @@ spec:
     name: {{ include "ldapconsole.fullname" . }}
     weight: 100
   port:
-    targetPort: {{  .Values.service.port }}
+    targetPort: {{  .Values.service.sslPort }}
+  tls:
+    termination: passthrough
   wildcardPolicy: None
 
