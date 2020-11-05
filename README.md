@@ -57,13 +57,13 @@ For the ldap, create 3 Config maps and load the certificates on each correspondi
 
 ![Config Maps - Certificate](ConfigMaps.png)
 
-- falconbanc-cert
+- **falconbanc-cert**
     Create the child named "falcon_banc.pem" under the data section and load the FalconBanc.pem contents
 
-- falconbanc-keys
+- **falconbanc-keys**
     Create the child named "falcon_banc.key" under the data section and load the FalconBanc.key content
 
-- falconbanc-root-cert
+- **falconbanc-root-cert**
     Create the child named "letsencryptauthorityx3-root.pem" under the data section and load the letsencryptauthorityx3-root.pem contents
 
 Here is the script to install the LDAPConsole (phpLDAPadmin) via Helm Chart
