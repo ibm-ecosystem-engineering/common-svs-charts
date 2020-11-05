@@ -51,7 +51,9 @@ Its hierarchical tree-viewer and advanced search functionality make it intuitive
 
 #### Certificates - Config Map
 
-There are several options [Secret, IBM Storage , Cloud Object Storage] to load the certificate which is available in OpenShift. For the ldap, create 3 Config maps and load the certificates on each correspondingly
+There are several options [Secret, IBM Storage , Cloud Object Storage, Certificate Manager etc] to load the certificate which is available in OpenShift. 
+
+For the ldap, create 3 Config maps and load the certificates on each correspondingly as shown below:-
 
 ![Config Maps - Certificate](ConfigMaps.png)
 
