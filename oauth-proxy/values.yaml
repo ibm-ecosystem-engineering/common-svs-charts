@@ -4,6 +4,9 @@
 
 replicaCount: 1
 
+clusterType: "openshift"
+host: "oauth-proxy"
+
 image:
   repository: quay.io/oauth2-proxy/oauth2-proxy
   pullPolicy: IfNotPresent
@@ -36,9 +39,12 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+proxy:
+  hostexternal: openpages.falconbanc.com
+
 service:
   type: ClusterIP
-  port: 443
+  port: 7443
 
 ingress:
   enabled: false
@@ -77,3 +83,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+service-account:
+  name: oauth-proxy
+  sccs:
+    - anyuid

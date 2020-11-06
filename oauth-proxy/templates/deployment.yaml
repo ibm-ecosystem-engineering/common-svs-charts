@@ -37,35 +37,31 @@ spec:
         - name: falconbanc-root-volume
           configMap:
             name: falconbanc-root-cert
+        - name: proxy-tls
+          secret:
+            secretName: oauth-proxy-tls
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: openshift/oauth-proxy:latest
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 443
+              containerPort: 7443
               protocol: TCP
           args:
-            - --https-address=:443
+            - --https-address=:7443
             - --provider=openshift
-            - --email-domain=falconbanc.com
-            - --upstream=https://52.116.127.66:10111 
-            - --cookie-secret=3cPNYMRzwLWV0+EOQIMvRg==
-            - --client-id=falconbanc_clientid
-            - --client-secret=falconbanc_secret
-            - --ssl-insecure-skip-verify=true
+            - --openshift-service-account=oauth-proxy
+            - --upstream=http://172.21.216.53:8080/
+            - --tls-cert=/etc/tls/private/tls.crt
+            - --tls-key=/etc/tls/private/tls.key
+            - --cookie-secret=SECRET
+            - --request-logging=true
           volumeMounts:
-            - name: falconbanc-cert-volume
-              mountPath: /etc/tls/private/falcon_banc.pem
-              subPath: falcon_banc.pem
-            - name: falconbanc-keys-volume
-              mountPath: /etc/tls/private/falcon_banc.key
-              subPath: falcon_banc.key
-            - name: falconbanc-root-volume
-              mountPath: /etc/tls/private/letsencryptauthorityx3-root.pem
-              subPath: letsencryptauthorityx3-root.pem
+            - mountPath: /etc/tls/private
+              name: proxy-tls
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
