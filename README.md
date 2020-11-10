@@ -97,7 +97,7 @@ Navigate to the OAuthProxy and open the oauthproxy.yaml to update the following 
 - --https-address=:7443
 - --provider=openshift
 - --openshift-service-account=oauthproxy
-- --upstream=https://52.116.127.66:10111
+- --upstream=https://<IP Address>:10111
 - --request-logging=true
 - --tls-cert=/etc/tls/private/tls.crt
 - --tls-key=/etc/tls/private/tls.key
