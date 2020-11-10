@@ -129,6 +129,24 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
 3. Switch to the namespace which you want proxy to be running
     oc project <Namespace name>
 
+4. Add 3 certificate contents to the oauthproxy.yaml which you received from the domain 
+
+    - Falcon_Banc.pem
+    - Falcon_Banc.key
+    - letsencryptauthorityx3-root.pem
+
+    certificate: |
+      -----BEGIN CERTIFICATE-----
+        << Insert Falconbanc.pem PEM Contents >>
+      -----END CERTIFICATE-----
+    key: "-----BEGIN PRIVATE KEY-----
+      << Insert Falconbanc.key Contents>>
+      -----END PRIVATE KEY-----\r\n"
+    caCertificate: |
+      -----BEGIN CERTIFICATE-----
+        << Insert Lets Encrypt CA Contents >>
+      -----END CERTIFICATE-----
+
 4. Apply the YAML File oauthproxy.yaml
     ```
     oc create -f oauthproxy.yaml

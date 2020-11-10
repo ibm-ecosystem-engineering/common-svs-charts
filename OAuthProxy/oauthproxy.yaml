@@ -105,12 +105,12 @@ spec:
     termination: reencrypt
     certificate: |
       -----BEGIN CERTIFICATE-----
-        << Insert PEM Contents >>
+        << Insert FalconBanc PEM Contents >>
       -----END CERTIFICATE-----
     key: "-----BEGIN PRIVATE KEY-----
-      << Insert Contents>>
+      << Insert FalconBanc KEy Contents>>
       -----END PRIVATE KEY-----\r\n"
     caCertificate: |
       -----BEGIN CERTIFICATE-----
-        << Insert CA Contents >>
+        << Insert LetsEncrypt CA Contents >>
       -----END CERTIFICATE-----
