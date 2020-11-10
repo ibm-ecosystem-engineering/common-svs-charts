@@ -119,7 +119,7 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
         openssl s_client -showcerts -connect <ExternalHost>:<Port>  </dev/null 2>/dev/null|openssl x509 -outform PEM > <File Name.crt>
         ```
 
-  After you secured the openpages.crt file, you need to create the ConfigMAP and bing that certificate
+  After you secured the openpages.crt file, you need to create the ConfigMAP and link the ExternalHost CA certificate
     - Refer the screenshot how the config MAP yaml 
 
 ![ConfigMAP OpenPages](/OAuthProxy/configmap.png)
@@ -148,4 +148,8 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
 6. Click the Route Location URL that will render the upstream host contents 
 
 ![OpenPages ROUTE](/OAuthProxy/openpages-routes.png)
+
+#### References
+
+OAuth Proxy : https://github.com/openshift/oauth-proxy
 
