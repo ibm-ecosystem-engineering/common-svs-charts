@@ -120,12 +120,18 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
     oc project <Namespace name>
 
 4. Apply the YAML File oauthproxy.yaml
+    ```
     oc create -f oauthproxy.yaml
+    ```
 
+    Here is the CLI Output
+
+    ```
     serviceaccount/oauthproxy created
     service/oauthproxy created
     deployment.apps/oauthproxy created
     route.route.openshift.io/oauthproxy created
+    ```
 
 5. Goto OCP Console and verify the POD, Deployment, Services , Route are healthy state
 
