@@ -92,7 +92,7 @@ This proxy is best used as a sidecar container in a Kubernetes pod, protecting a
 
 ### Install the OAuth Proxy on ROKS 4.5
 
-Navigate to the OAuthProxy and open the oauthproxy.yaml to update the following args passing to OAuth Proxy depending on your requirements. 
+Navigate to the OAuthProxy and open the oauthproxy.yaml to update the following args. Refer the OAuth Proxy Parameters for explanation for each parameters - https://github.com/openshift/oauth-proxy#command-line-options
 
 - --https-address=:7443
 - --provider=openshift
