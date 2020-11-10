@@ -84,7 +84,3 @@ tolerations: []
 
 affinity: {}
 
-service-account:
-  name: oauth-proxy
-  sccs:
-    - anyuid

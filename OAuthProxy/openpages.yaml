@@ -1,0 +1,42 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: openpages
+  namespace: common-services-proxy
+  selfLink: /api/v1/namespaces/common-services-proxy/configmaps/openpages
+  uid: 16b4dc91-553e-4301-9100-383824c095e9
+  resourceVersion: '7441915'
+  creationTimestamp: '2020-11-10T13:35:57Z'
+  managedFields:
+    - manager: Mozilla
+      operation: Update
+      apiVersion: v1
+      time: '2020-11-10T13:47:35Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:openpages.crt': {}
+data:
+  openpages.crt: |-
+    -----BEGIN CERTIFICATE-----
+    MIIDdzCCAl+gAwIBAgIEJZ3NDzANBgkqhkiG9w0BAQsFADBZMQswCQYDVQQGEwJV
+    UzELMAkGA1UECBMCTUExEjAQBgNVBAcTCUxpdHRsZXRvbjERMA8GA1UEChMISUJN
+    IENvcnAxFjAUBgNVBAMTDTUyLjExNi4xMjcuNjYwHhcNMjAxMTA5MjI0NzUzWhcN
+    MjExMTA5MjI0NzUzWjBZMQswCQYDVQQGEwJVUzELMAkGA1UECBMCTUExEjAQBgNV
+    BAcTCUxpdHRsZXRvbjERMA8GA1UEChMISUJNIENvcnAxFjAUBgNVBAMTDTUyLjEx
+    Ni4xMjcuNjYwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCeV8VRh2Jx
+    V0aO4x8VY+YIVpvFlnG1gfon9xX8IAvioLmyDFG2iRKfOusZJJ09QFxMhnqGBxoT
+    rvN2C2sfSOybf0Zs8wWnOaOa6FBDJbojzwtJWG3xfocS8zF9MBo61dblwVyrHsr+
+    dftnA5yaOjg0xoVJpu221cAF4YDsoCn318tP02rBUMZxssY9V8rR/zNMwEu288YO
+    lORjn97OZRGTXtYc49ox2kNma0lzHuY1vOzajPEtlRQzLAAlrIKHspurQuAB9WzN
+    zWS1RmWv1rMFSI8Jyt2qecncegGzUrjee8orh2sFv/Lv7FbiUKTg3x2Y1wDRql1S
+    lP00T3Aejc5DAgMBAAGjRzBFMBMGA1UdJQQMMAoGCCsGAQUFBwMBMA8GA1UdEQQI
+    MAaHBDR0f0IwHQYDVR0OBBYEFItwZM7ZwbAMR30f5CodGNCkUhpvMA0GCSqGSIb3
+    DQEBCwUAA4IBAQArSir4jIPWXYKSLCja48DJmctrt51iRK0sBQqsYsaST2T10uCj
+    4z41I/7kBNoVp0fOY3k4J9FQcym1mtfA34nPrQEazCY7KibC+Ii6w6ExF4JOx5xT
+    LL4gWJdZIgNpGjZLoWThtrnZxyi/VjIG+IaiWSgIvJoj/peorjOkSoJfqsDmMYGd
+    yFKQ6FPBSBW7dmjqtvGtm38T6yKQGusdACIvn+kKfTgr98i/jze6GHoBiVBJkeIA
+    y82MZl3I7TR3MZsZuIsV0oizDkuvxo5olFdv2TXpLrHJPJU+yhhr/lXwexLQoJzy
+    QSNcKtUvmkLeN1o+l0JQL7qbPEL1agow6Eht
+    -----END CERTIFICATE-----

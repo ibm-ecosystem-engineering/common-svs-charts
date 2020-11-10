@@ -28,22 +28,16 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
-        - name: falconbanc-cert-volume
-          configMap:
-            name: falconbanc-cert
-        - name: falconbanc-keys-volume
-          configMap:
-            name: falconbanc-keys
-        - name: falconbanc-root-volume
-          configMap:
-            name: falconbanc-root-cert
         - name: proxy-tls
           secret:
-            secretName: oauth-proxy-tls
+            secretName: {{ .Values.host }}-tls
       containers:
+        - name: nginx-hello
+          image: docker.io/bitnami/nginx
+          ports:
+            - containerPort: 8080
+              protocol: TCP
         - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
           image: openshift/oauth-proxy:latest
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -53,12 +47,13 @@ spec:
           args:
             - --https-address=:7443
             - --provider=openshift
-            - --openshift-service-account=oauth-proxy
-            - --upstream=http://172.21.216.53:8080/
+            - --openshift-service-account={{ include "oauth-proxy.serviceAccountName" . }}
+            - --upstream=http://localhost:8080
             - --tls-cert=/etc/tls/private/tls.crt
             - --tls-key=/etc/tls/private/tls.key
             - --cookie-secret=SECRET
             - --request-logging=true
+
           volumeMounts:
             - mountPath: /etc/tls/private
               name: proxy-tls

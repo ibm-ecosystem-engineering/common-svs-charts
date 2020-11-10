@@ -73,14 +73,63 @@ helm install ldapconsole ldapconsole/  --set LDAP.host=<Host IPAddress> --values
 ```
 
 **Note:** Restart the pod if it crashloopback
-## Helm Dependency Update
 
-You can run the helm dependency update within any chart folder
+# OAuth Proxy
 
-```
-helm dep update
-```
+### OpenShift oauth-proxy
+A reverse proxy and static file server that provides authentication and authorization to an OpenShift OAuth server or Kubernetes master supporting the 1.6+ remote authorization endpoints to validate access to content. It is intended for use within OpenShift clusters to make it easy to run both end-user and infrastructure services that don't provide their own authentication.
 
-# Helm Tutorials
-- https://helm.sh/
-- https://www.ibm.com/cloud/architecture/content/course/helm-fundamentals
+**Features:**
+
+Performs zero-configuration OAuth when run as a pod in OpenShift
+Able to perform simple authorization checks against the OpenShift and Kubernetes RBAC policy engine to grant access
+May also be configured to check bearer tokens or Kubernetes client certificates and verify access
+On OpenShift 3.6+ clusters, supports zero-configuration end-to-end TLS via the out of the box router
+This is a fork of the https://github.com/bitly/oauth2_proxy project with other providers removed (for now). It's focused on providing the simplest possible secure proxy on OpenShift
+
+### Using this proxy with OpenShift
+This proxy is best used as a sidecar container in a Kubernetes pod, protecting another server that listens only on localhost. On an OpenShift cluster, it can use the service account token as an OAuth client secret to identify the current user and perform access control checks. 
+
+### Install the OAuth Proxy on ROKS 4.5
+
+Navigate to the OAuthProxy and open the oauthproxy.yaml to update the following args passing to OAuth Proxy depending on your requirements. 
+
+- --https-address=:7443
+- --provider=openshift
+- --openshift-service-account=oauthproxy
+- --upstream=https://52.116.127.66:10111
+- --request-logging=true
+- --tls-cert=/etc/tls/private/tls.crt
+- --tls-key=/etc/tls/private/tls.key
+- --cookie-secret=SECRET
+- --ssl-insecure-skip-verify=true
+- --upstream-ca=/etc/tls/private/ca/openpages.crt
+
+Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
+
+1. Login to OCP Cluster and copy the CLI Login commands
+    oc login --token=tokenID --server=https://c100-e.eu-gb.containers.cloud.ibm.com:31205
+
+2. Create the ConfigMAP as "openpages" using the external host CA certificate. You need to get CA.crt from the external host machine. 
+    - Refer the screenshot how the config MAP yaml 
+    - Refer the openpages.yaml file in the folder [OAuthProxy]
+
+![ConfigMAP OpenPages](ConfigMap-CA.png)
+
+3. Switch to the namespace which you want proxy to be running
+    oc project <Namespace name>
+
+4. Apply the YAML File oauthproxy.yaml
+    oc create -f oauthproxy.yaml
+
+    serviceaccount/oauthproxy created
+    service/oauthproxy created
+    deployment.apps/oauthproxy created
+    route.route.openshift.io/oauthproxy created
+
+5. Goto OCP Console and verify the POD, Deployment, Services , Route are healthy state
+
+6. Click the Route Location URL that will render the upstream host contents 
+
+![OpenPages ROUTE](ConfigMap-CA.png)
+
