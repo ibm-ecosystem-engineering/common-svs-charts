@@ -110,11 +110,21 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
 1. Login to OCP Cluster and copy the CLI Login commands
     oc login --token=tokenID --server=https://c100-e.eu-gb.containers.cloud.ibm.com:31205
 
-2. Create the ConfigMAP as "openpages" using the external host CA certificate. You need to get CA.crt from the external host machine. 
+2. Create the ConfigMAP as "openpages" using the external host CA certificate. 
+
+**Retrieve External Host CA CRT**
+  If you don't have CA.crt from the external host machine, then run the following command which retrieves and store the certificate in the file name "openpages.crt"
+
+        ```
+        openssl s_client -showcerts -connect <ExternalHost>:<Port>  </dev/null 2>/dev/null|openssl x509 -outform PEM > <File Name.crt>
+        ```
+
+  After you secured the openpages.crt file, you need to create the ConfigMAP and bing that certificate
     - Refer the screenshot how the config MAP yaml 
-    - Refer the openpages.yaml file in the folder [OAuthProxy]
 
 ![ConfigMAP OpenPages](/OAuthProxy/configmap.png)
+
+**Note:** As reference configmap file, you can refer the contents of openpages.yaml file in the folder [OAuthProxy] 
 
 3. Switch to the namespace which you want proxy to be running
     oc project <Namespace name>
