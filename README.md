@@ -108,7 +108,7 @@ Navigate to the OAuthProxy and open the oauthproxy.yaml to update the following 
 Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
 
 1. Login to OCP Cluster and copy the CLI Login commands
-    oc login --token=<tokenID> --server=<<ServerIPAddress>
+    oc login --token=<<tokenID>> --server=<<ServerIPAddress>>
 
 2. Create the ConfigMAP as "openpages" using the external host CA certificate. 
 
