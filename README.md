@@ -150,7 +150,7 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
       -----END CERTIFICATE-----
 ```
 
-4. Apply the YAML File oauthproxy.yaml
+5. Apply the YAML File oauthproxy.yaml
     ```
     oc create -f oauthproxy.yaml
     ```
@@ -164,16 +164,25 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
     route.route.openshift.io/oauthproxy created
     ```
 
-5. Goto OCP Console and verify the POD, Deployment, Services , Route are healthy state
+6. Goto OCP Console and verify the POD, Deployment, Services , Route are healthy state
 
-6. Click the Route Location URL that will render the upstream host contents 
+7. Click the Route Location URL that will render the upstream host contents 
 
 ![OpenPages ROUTE](/OAuthProxy/images/openpages-routes.png)
 
-**Note:**
+**TIP:**
 
 #### Configuring the proxy's service account in OpenShift
 In order for service accounts to be used as OAuth clients, they must have the proper OAuth annotations set. to point to a valid external URL. In most cases, this can be a route exposing the service fronting your proxy. We recommend using a Reencrypt type route and service serving certs to maximize end to end security.
+
+```
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    name: proxy
+    annotations:
+      serviceaccounts.openshift.io/oauth-redirectreference.primary: '{"kind":"OAuthRedirectReference","apiVersion":"v1","reference":{"kind":"Route","name":"proxy"}}'
+```
 
 #### References
 
