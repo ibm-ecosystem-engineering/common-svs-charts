@@ -115,9 +115,9 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
 **Retrieve External Host CA CRT**
   If you don't have CA.crt from the external host machine, then run the following command which retrieves and store the certificate in the file name "openpages.crt"
 
-        ```
+        
         openssl s_client -showcerts -connect <ExternalHost>:<Port>  </dev/null 2>/dev/null|openssl x509 -outform PEM > <File Name.crt>
-        ```
+       
 
   After you secured the openpages.crt file, you need to create the ConfigMAP and link the ExternalHost CA certificate
     - Refer the screenshot how the config MAP yaml 
