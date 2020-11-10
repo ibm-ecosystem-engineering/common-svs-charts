@@ -114,7 +114,7 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
     - Refer the screenshot how the config MAP yaml 
     - Refer the openpages.yaml file in the folder [OAuthProxy]
 
-![ConfigMAP OpenPages](ConfigMap-CA.png)
+![ConfigMAP OpenPages](/OAuthProxy/ConfigMap-CA.png)
 
 3. Switch to the namespace which you want proxy to be running
     oc project <Namespace name>
@@ -131,5 +131,5 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
 
 6. Click the Route Location URL that will render the upstream host contents 
 
-![OpenPages ROUTE](ConfigMap-CA.png)
+![OpenPages ROUTE](/OAuthProxy/ConfigMap-CA.png)
 
