@@ -81,11 +81,11 @@ A reverse proxy and static file server that provides authentication and authoriz
 
 **Features:**
 
-Performs zero-configuration OAuth when run as a pod in OpenShift
-Able to perform simple authorization checks against the OpenShift and Kubernetes RBAC policy engine to grant access
-May also be configured to check bearer tokens or Kubernetes client certificates and verify access
-On OpenShift 3.6+ clusters, supports zero-configuration end-to-end TLS via the out of the box router
-This is a fork of the https://github.com/bitly/oauth2_proxy project with other providers removed (for now). It's focused on providing the simplest possible secure proxy on OpenShift
+- Performs zero-configuration OAuth when run as a pod in OpenShift
+- Able to perform simple authorization checks against the OpenShift and Kubernetes RBAC policy engine to grant access
+- May also be configured to check bearer tokens or Kubernetes client certificates and verify access
+- On OpenShift 3.6+ clusters, supports zero-configuration end-to-end TLS via the out of the box router
+- This is a fork of the https://github.com/bitly/oauth2_proxy project with other providers removed (for now). It's focused on providing the simplest possible secure proxy on OpenShift
 
 ### Using this proxy with OpenShift
 This proxy is best used as a sidecar container in a Kubernetes pod, protecting another server that listens only on localhost. On an OpenShift cluster, it can use the service account token as an OAuth client secret to identify the current user and perform access control checks. 
