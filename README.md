@@ -135,6 +135,8 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
     - Falcon_Banc.key
     - letsencryptauthorityx3-root.pem
 
+**oauthproxy.yaml**
+```
     certificate: |
       -----BEGIN CERTIFICATE-----
         << Insert Falconbanc.pem PEM Contents >>
@@ -146,6 +148,7 @@ Once you modify the oauthproxy.yaml, apply changes to the ROKS Cluster
       -----BEGIN CERTIFICATE-----
         << Insert Lets Encrypt CA Contents >>
       -----END CERTIFICATE-----
+```
 
 4. Apply the YAML File oauthproxy.yaml
     ```
