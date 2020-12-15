@@ -23,7 +23,6 @@ cn: admin
 description: LDAP administrator
 objectclass: simpleSecurityObject
 objectclass: organizationalRole
-userpassword: pXyhewV3YD
 
 # Entry 3: ou=groups,dc=falconbanc,dc=com
 dn: ou=groups,dc=falconbanc,dc=com
@@ -83,7 +82,6 @@ objectclass: person
 objectclass: top
 sn: modi1
 uid: Aayush.Modi1@gds.ey.com
-userpassword: PxY.T7nZ.X
 
 # Entry 10: uid=alex@falconbanc.com,ou=users,dc=falconbanc,dc=com
 dn: uid=alex@falconbanc.com,ou=users,dc=falconbanc,dc=com
@@ -94,7 +92,6 @@ objectclass: person
 objectclass: top
 sn: d
 uid: alex@falconbanc.com
-userpassword: pXyhewV3YD
 
 # Entry 11: uid=anthony.fuller@ibm.com,ou=users,dc=falconbanc,dc=com
 dn: uid=anthony.fuller@ibm.com,ou=users,dc=falconbanc,dc=com
@@ -105,7 +102,6 @@ objectclass: person
 objectclass: top
 sn: fuller
 uid: anthony.fuller@ibm.com
-userpassword: pXyhewV3YD
 
 # Entry 12: uid=Ashwath.Ramanan@gds.ey.com,ou=users,dc=falconbanc,dc=com
 dn: uid=Ashwath.Ramanan@gds.ey.com,ou=users,dc=falconbanc,dc=com
@@ -116,7 +112,6 @@ objectclass: person
 objectclass: top
 sn: Ramanan
 uid: Ashwath.Ramanan@gds.ey.com
-userpassword: Gx4aok-D!V
 
 # Entry 13: uid=bala@us.ibm.com,ou=users,dc=falconbanc,dc=com
 dn: uid=bala@us.ibm.com,ou=users,dc=falconbanc,dc=com
@@ -127,7 +122,6 @@ objectclass: person
 objectclass: top
 sn: bala
 uid: bala@us.ibm.com
-userpassword: pXyhewV3YD
 
 # Entry 14: uid=jmachter@us.ibm.com,ou=users,dc=falconbanc,dc=com
 dn: uid=jmachter@us.ibm.com,ou=users,dc=falconbanc,dc=com
@@ -138,7 +132,6 @@ objectclass: person
 objectclass: top
 sn: a
 uid: jmachter@us.ibm.com
-userpassword: pXyhewV3YD
 
 # Entry 15: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
 dn: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
@@ -149,7 +142,6 @@ objectclass: person
 objectclass: top
 sn: mjperrins
 uid: mjperrin@us.ibm.com
-userpassword: pXyhewV3YD
 
 # Entry 16: uid=Rahul.Koul@ey.com,ou=users,dc=falconbanc,dc=com
 dn: uid=Rahul.Koul@ey.com,ou=users,dc=falconbanc,dc=com
@@ -160,7 +152,6 @@ objectclass: person
 objectclass: top
 sn: koul
 uid: Rahul.Koul@ey.com
-userpassword: Vj3vG.WB@P
 
 # Entry 17: uid=sarah@falconbanc.com,ou=users,dc=falconbanc,dc=com
 dn: uid=sarah@falconbanc.com,ou=users,dc=falconbanc,dc=com
@@ -171,7 +162,6 @@ objectclass: person
 objectclass: top
 sn: p
 uid: sarah@falconbanc.com
-userpassword: pXyhewV3YD
 
 # Entry 18: uid=Vidit.Pathak@gds.ey.com,ou=users,dc=falconbanc,dc=com
 dn: uid=Vidit.Pathak@gds.ey.com,ou=users,dc=falconbanc,dc=com
@@ -182,7 +172,6 @@ objectclass: person
 objectclass: top
 sn: Pathak
 uid: Vidit.Pathak@gds.ey.com
-userpassword: n6DJs*RFkq
 
 # Entry 19: uid=Vinay.Pasumarthy@ey.com,ou=users,dc=falconbanc,dc=com
 dn: uid=Vinay.Pasumarthy@ey.com,ou=users,dc=falconbanc,dc=com
@@ -193,4 +182,3 @@ objectclass: person
 objectclass: top
 sn: Pasumarthy
 uid: Vinay.Pasumarthy@ey.com
-userpassword: B@*sD4nJ4N

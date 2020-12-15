@@ -23,7 +23,6 @@ cn: admin
 description: LDAP administrator
 objectclass: simpleSecurityObject
 objectclass: organizationalRole
-userpassword: {SSHA}SSWk8HE1zGfK/5YS96vonhJKkbxtHDNn
 
 # Entry 3: ou=groups,dc=falconbanc,dc=com
 dn: ou=groups,dc=falconbanc,dc=com
@@ -71,7 +70,6 @@ objectclass: person
 objectclass: top
 sn: anthony
 uid: anthony.fuller@ibm.com
-userpassword: {MD5}ISMvKXpXpadDiUoOSoAfww==
 
 # Entry 9: uid=bala@us.ibm.com,ou=users,dc=falconbanc,dc=com
 dn: uid=bala@us.ibm.com,ou=users,dc=falconbanc,dc=com
@@ -82,7 +80,6 @@ objectclass: person
 objectclass: top
 sn: bala
 uid: bala@us.ibm.com
-userpassword: {MD5}ISMvKXpXpadDiUoOSoAfww==
 
 # Entry 10: uid=jmachter@us.ibm.com,ou=users,dc=falconbanc,dc=com
 dn: uid=jmachter@us.ibm.com,ou=users,dc=falconbanc,dc=com
@@ -93,7 +90,6 @@ objectclass: person
 objectclass: top
 sn: jeff
 uid: jmachter@us.ibm.com
-userpassword: {MD5}ISMvKXpXpadDiUoOSoAfww==
 
 # Entry 11: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
 dn: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
@@ -104,7 +100,6 @@ objectclass: person
 objectclass: top
 sn: matt
 uid: mjperrin@us.ibm.com
-userpassword: {MD5}ISMvKXpXpadDiUoOSoAfww==
 
 # Entry 12: uid=sarah@falconbanc.com,ou=users,dc=falconbanc,dc=com
 dn: uid=sarah@falconbanc.com,ou=users,dc=falconbanc,dc=com
@@ -115,4 +110,3 @@ objectclass: person
 objectclass: top
 sn: sarah
 uid: sarah@falconbanc.com
-userpassword: {MD5}ISMvKXpXpadDiUoOSoAfww==
