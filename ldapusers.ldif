@@ -35,71 +35,30 @@ dn: cn=Developer,ou=groups,dc=falconbanc,dc=com
 cn: Developer
 objectclass: groupOfUniqueNames
 objectclass: top
-uniquemember: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
-uniquemember: uid=bala@us.ibm.com,ou=users,dc=falconbanc,dc=com
+uniquemember: uid=mjp@us.ibm.com,ou=users,dc=falconbanc,dc=com
+uniquemember: uid=bl@us.ibm.com,ou=users,dc=falconbanc,dc=com
 
 # Entry 5: cn=DevOps,ou=groups,dc=falconbanc,dc=com
 dn: cn=DevOps,ou=groups,dc=falconbanc,dc=com
 cn: DevOps
 objectclass: groupOfUniqueNames
 objectclass: top
-uniquemember: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
-uniquemember: uid=anthony.fuller@ibm.com,ou=users,dc=falconbanc,dc=com
+uniquemember: uid=mjp@us.ibm.com,ou=users,dc=falconbanc,dc=com
+uniquemember: uid=af@ibm.com,ou=users,dc=falconbanc,dc=com
 
 # Entry 6: cn=GRC,ou=groups,dc=falconbanc,dc=com
 dn: cn=GRC,ou=groups,dc=falconbanc,dc=com
 cn: GRC
 objectclass: groupOfUniqueNames
 objectclass: top
-uniquemember: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
 uniquemember: uid=sarah@falconbanc.com,ou=users,dc=falconbanc,dc=com
-uniquemember: uid=jmachter@us.ibm.com,ou=users,dc=falconbanc,dc=com
+
 
 # Entry 7: ou=users,dc=falconbanc,dc=com
 dn: ou=users,dc=falconbanc,dc=com
 objectclass: organizationalUnit
 objectclass: top
 ou: users
-
-# Entry 8: uid=anthony.fuller@ibm.com,ou=users,dc=falconbanc,dc=com
-dn: uid=anthony.fuller@ibm.com,ou=users,dc=falconbanc,dc=com
-cn: anthony
-objectclass: inetOrgPerson
-objectclass: organizationalPerson
-objectclass: person
-objectclass: top
-sn: anthony
-uid: anthony.fuller@ibm.com
-
-# Entry 9: uid=bala@us.ibm.com,ou=users,dc=falconbanc,dc=com
-dn: uid=bala@us.ibm.com,ou=users,dc=falconbanc,dc=com
-cn: bala
-objectclass: inetOrgPerson
-objectclass: organizationalPerson
-objectclass: person
-objectclass: top
-sn: bala
-uid: bala@us.ibm.com
-
-# Entry 10: uid=jmachter@us.ibm.com,ou=users,dc=falconbanc,dc=com
-dn: uid=jmachter@us.ibm.com,ou=users,dc=falconbanc,dc=com
-cn: jeff
-objectclass: inetOrgPerson
-objectclass: organizationalPerson
-objectclass: person
-objectclass: top
-sn: jeff
-uid: jmachter@us.ibm.com
-
-# Entry 11: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
-dn: uid=mjperrin@us.ibm.com,ou=users,dc=falconbanc,dc=com
-cn: matt
-objectclass: inetOrgPerson
-objectclass: organizationalPerson
-objectclass: person
-objectclass: top
-sn: matt
-uid: mjperrin@us.ibm.com
 
 # Entry 12: uid=sarah@falconbanc.com,ou=users,dc=falconbanc,dc=com
 dn: uid=sarah@falconbanc.com,ou=users,dc=falconbanc,dc=com
